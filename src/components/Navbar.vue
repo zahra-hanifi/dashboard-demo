@@ -143,7 +143,7 @@ export default {
         { title: 'Settings', abbr: 'S' }
       ]
     }
-  }
+  },
 }
 </script>
 

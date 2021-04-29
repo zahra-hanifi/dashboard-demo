@@ -157,7 +157,7 @@
                       mdi-weather-sunny
                     </v-icon>
                     <v-icon
-                        v-if="weatherData.main === 'Cloud'"
+                        v-if="weatherData.main === 'Clouds'"
                         class="weather-icon">
                       mdi-weather-cloudy
                     </v-icon>
@@ -619,11 +619,12 @@
 <script>
 import axios from 'axios'
 import Navbar from './components/Navbar'
+
 export default {
   name: 'App',
 
   components: {
-    Navbar
+    Navbar,
   },
 
   data() {
@@ -671,7 +672,10 @@ export default {
   methods: {
     fullyShowSidebar() {
       this.drawer = !this.drawer;
-    }
+    },
+    changeRTL () {
+      this.$vuetify.rtl = true
+    },
   },
   mounted() {
     axios.get('http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=1cf42ed0792e1fa0d3bb813b6976955b')
